@@ -23,7 +23,6 @@ class CipherTest {
         }
 
         return builder.toString();
-
     }
 
     private void mapNumberByShifter(StringBuilder builder,  char charInput, int shift) {
