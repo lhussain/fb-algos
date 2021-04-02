@@ -79,7 +79,6 @@ class CipherTest {
     private void run() {
         testAlphaNumericWordWithSpecialCharacters("All-convoYs-9-be:Alert1.", 4, "Epp-gsrzsCw-3-fi:Epivx5.");
         testAlphaNumericWordWithSpecialCharacters("abcdZXYzxy-999.@", 200, "stuvRPQrpq-999.@");
-
     }
 
     public static void main(String[] args) {
