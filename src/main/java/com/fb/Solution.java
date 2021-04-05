@@ -59,7 +59,7 @@ public class Solution {
             // same time we update frequency of this character (because we have already iterated through this character)
             charFrequencyMap.put(current, charFrequencyMap.get(current) - 1);
 
-            // window:  We now need to determine do we move the head or the tail (expand or contract)
+            // window:  We now need to determine do we move the head
             while (numberOfTargets == 0) {
                 int nextPosition = (tail - head) + 1;
 
