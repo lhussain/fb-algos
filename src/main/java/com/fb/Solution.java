@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 Note: ideally we want to perform a linear operation for benefit of time and space
 
-Note: we need to establish how we move the tail or the head of the window by use of counters as we traverse through the word
+Note: we need to establish how we move the tail and the head of the window by use of counters as we traverse through the word
 
 Note: we update frequency of this (found) character
 
