@@ -42,7 +42,7 @@ public class Solution {
         int minLength = Integer.MAX_VALUE;
 
         int numberOfTargets = t.length();
-        int windowStart = 0;
+        int head = 0;
 
         // ***** we need 2 loops ****
         // 1. outer loop  to iterate over the search string
@@ -61,24 +61,24 @@ public class Solution {
 
             // window:  We now need to determine do we move the head or the tail (expand or contract)
             while (numberOfTargets == 0) {
-                int nextPosition = (tail - windowStart) + 1;
+                int nextPosition = (tail - head) + 1;
 
                 if (minLength > nextPosition ) {
-                    minStart = windowStart;
+                    minStart = head;
                     minLength = nextPosition;
                 }
 
-                char head = s.charAt(windowStart);
+                char charAtHead = s.charAt(head);
 
                 // this is the required character
-                if (charFrequencyMap.get(head) >= 0) {
+                if (charFrequencyMap.get(charAtHead) >= 0) {
                     numberOfTargets++;
                 }
 
                 // whilst the window satisfies the requirement we will move the head of the window
-                charFrequencyMap.put(head, charFrequencyMap.get(head) + 1);
+                charFrequencyMap.put(charAtHead, charFrequencyMap.get(charAtHead) + 1);
 
-                windowStart++;
+                head++;
             }
         }
 
