@@ -16,7 +16,7 @@ Note: when the window is qualified (contains what we want), we will move the hea
 
 
 public class Solution {
-    String res = "";
+    //String res = "";
 
     private String minWindow(String s, String t) {
         if (s == null || t == null) {
@@ -30,6 +30,9 @@ public class Solution {
             ++letterCount[c];
         }
 
+        Integer finalLeft = null;
+        Integer finalRight = null;
+
         for (int right = 0; right < s.length(); right++) {
             if (--letterCount[s.charAt(right)] >= 0) {
                 ++count;
@@ -38,7 +41,8 @@ public class Solution {
             while (count == t.length()) {
                 if (minLen > right - left + 1) {
                     minLen = right - left + 1;
-                    res = s.substring(left, right + 1);
+                    finalLeft = left;
+                    finalRight = right + 1;
                 }
                 if (++letterCount[s.charAt(left)] > 0) {
                     --count;
@@ -46,7 +50,12 @@ public class Solution {
                 ++left;
             }
         }
-        return res;
+
+        if (finalLeft != null) {
+            return s.substring(finalLeft, finalRight);
+        } else {
+            return "";
+        }
     }
 
     private void testSolution(String s, String t, String expected)  {
